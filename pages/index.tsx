@@ -68,7 +68,9 @@ const Home: NextPage = () => {
         <div id="firepad-container" className="flex-1"></div>
       </main>
 
-      <footer className="p-8 text-center border border-t">Upstage</footer>
+      <footer className="p-8 text-center border border-t flex flex-col items-center">
+        <img src="logo.webp" />
+      </footer>
     </div>
   );
 };

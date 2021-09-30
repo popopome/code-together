@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
-import { FirepadUserList } from "./firepadUserList";
-import { PgaeHead } from "./PageHead";
-import { ensureExampleRef, initFireBase } from "./utils";
+import { FirepadUserList } from "../app/firepadUserList";
+import { PgaeHead } from "../app/PageHead";
+import { ensureExampleRef, initFireBase } from "../app/utils";
 
 const languageConfig = {
   javascript: {
@@ -24,12 +24,14 @@ const Home: NextPage = () => {
 
     const lang =
       new URLSearchParams(window.location.search).get("lang") ?? "javascript";
+    // @ts-ignore
     const langCfg = languageConfig[lang];
 
     //// Get Firebase Database reference.
     var firepadRef = ensureExampleRef();
 
     //// Create CodeMirror (with line numbers and the JavaScript mode).
+    // @ts-ignore
     var codeMirror = CodeMirror(document.getElementById("firepad-container"), {
       lineNumbers: true,
       mode: langCfg.mode,
@@ -39,6 +41,7 @@ const Home: NextPage = () => {
     var userId = Math.floor(Math.random() * 9999999999).toString();
 
     //// Create Firepad.
+    // @ts-ignore
     var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
       defaultText: langCfg.defaultText,
       userId,

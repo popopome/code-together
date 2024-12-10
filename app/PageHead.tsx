@@ -26,10 +26,10 @@ export function PgaeHead() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"
       />
-      <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
+      <script src="/firepad.min.js"></script>
       <link
         rel="stylesheet"
-        href="https://firepad.io/releases/v1.5.9/firepad.css"
+        href="/firepad.css"
       />
     </Head>
   );
